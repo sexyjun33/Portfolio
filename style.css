@@ -52,7 +52,7 @@
     --size-border-radius: 4px;
 
     /* Annimation */
-    --animation-duration: 300ms ease;
+    --animation-duration: 300ms;
   }
 
   /* Universal tags */
@@ -117,12 +117,20 @@ p {
 
 /* Navbar */
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-dark-navy);
+    background-color: transparent;
     align-items: center;
     color:var(--color-white);
     padding: 16px;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+    background-color: var(--color-dark-navy);
+    padding: 8px;
 }
 
 .navbar__menu {
@@ -166,6 +174,7 @@ p {
 #home {
     background: url("imgs/home-background.png") center/cover no-repeat;
     padding: 40px;
+    padding-top:120px;
     text-align: center;
 }
 
@@ -223,7 +232,7 @@ p {
 }
 
 .major__icon i {
-    transition: all var(--animation-duration);
+    transition: all var(--animation-duration) ease;
 }
 .major__icon:hover i {
     color: var(--color-orange);
@@ -342,7 +351,7 @@ p {
 .category__btn:hover {
     background-color: var(--color-navy);
     color: var(--color-white);
-    transition: all var(--animation-duration);
+    transition: all var(--animation-duration) ease;
     
 }
 
@@ -363,7 +372,7 @@ p {
     transform: translateY(-20px);
     left: 4px;
     opacity: 0;
-    transition: all var(--animation-duration);
+    transition: all var(--animation-duration) ease;
 }
 
 .work__projects {
@@ -400,7 +409,7 @@ p {
     left: 0;
     opacity: 0;
     transform: translateY(10px);
-    transition: all var(--animation-duration);
+    transition: all var(--animation-duration) ease;
 }
 
 .project:hover .project__description {
@@ -484,7 +493,7 @@ p {
 .contact__links {
     font-size: var(--font-large);
     margin-top: 24px 0;
-    transition: all var(--animation-duration);
+    transition: all var(--animation-duration) ease;
 }
 
 .contact__links i:hover {
@@ -520,7 +529,7 @@ p {
 
     .skillset {
         flex-direction: column;
-    }
+    }   
 
     .project {
         flex-grow: 1;
