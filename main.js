@@ -18,7 +18,7 @@ navbarMenu.addEventListener('click', (event) => {
     const link = target.dataset.link;
     if (link == null) {
         return;
-    }        
+    }
     scrollIntoView(link);
 });
 
@@ -35,13 +35,22 @@ document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if(window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
 
-
-
-
-
+// Handle click on the "arrow-up" button
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
 
 function scrollIntoView(selcetor) {
     const scrollTo = document.querySelector(selcetor);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    scrollTo.scrollIntoView({ behavior: "smooth" });
 }
