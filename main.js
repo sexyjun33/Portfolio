@@ -20,6 +20,7 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
     scrollIntoView(link);
+    navbarMenu.classList.remove('open');
 });
 
 // Navbar toggle button for small screen
