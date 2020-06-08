@@ -131,7 +131,7 @@ p {
 
 #navbar.navbar--dark {
     background-color: var(--color-dark-navy);
-    padding: 8px;
+    padding: 0 8px;;
 }
 
 .navbar__menu {
